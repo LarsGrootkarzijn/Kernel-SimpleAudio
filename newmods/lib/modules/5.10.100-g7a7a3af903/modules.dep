@@ -213,6 +213,7 @@ kernel/sound/core/snd-hwdep.ko:
 kernel/sound/core/snd-rawmidi.ko:
 kernel/sound/usb/snd-usb-audio.ko: kernel/sound/core/snd-hwdep.ko kernel/sound/usb/snd-usbmidi-lib.ko kernel/sound/core/snd-rawmidi.ko kernel/drivers/usb/core/usbcore.ko kernel/drivers/usb/common/usb-common.ko
 kernel/sound/usb/snd-usbmidi-lib.ko: kernel/sound/core/snd-rawmidi.ko kernel/drivers/usb/core/usbcore.ko kernel/drivers/usb/common/usb-common.ko
+kernel/sound/soc/codecs/snd-soc-wm8776.ko:
 kernel/sound/soc/fsl/snd-soc-fsl-sai.ko:
 kernel/net/802/p8022.ko: kernel/net/llc/llc.ko
 kernel/net/802/psnap.ko: kernel/net/llc/llc.ko
@@ -332,7 +333,5 @@ kernel/net/can/can.ko:
 kernel/net/can/can-raw.ko: kernel/net/can/can.ko
 kernel/net/can/can-bcm.ko: kernel/net/can/can.ko
 kernel/net/can/can-gw.ko: kernel/net/can/can.ko
-kernel/net/bluetooth/bluetooth.ko: kernel/crypto/ecdh_generic.ko kernel/crypto/ecc.ko
-kernel/net/bluetooth/rfcomm/rfcomm.ko: kernel/net/bluetooth/bluetooth.ko kernel/crypto/ecdh_generic.ko kernel/crypto/ecc.ko
 kernel/net/sctp/sctp.ko: kernel/lib/libcrc32c.ko
 kernel/net/sctp/sctp_diag.ko: kernel/net/sctp/sctp.ko kernel/lib/libcrc32c.ko

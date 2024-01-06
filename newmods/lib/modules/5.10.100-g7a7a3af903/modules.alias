@@ -2402,8 +2402,6 @@ alias net-pf-29 can
 alias can-proto-1 can_raw
 alias can-proto-2 can_bcm
 alias can-gw can_gw
-alias net-pf-31 bluetooth
-alias bt-proto-3 rfcomm
 alias net-pf-10-proto-132 sctp
 alias net-pf-2-proto-132 sctp
 alias net-pf-16-proto-4-type-2-132 sctp_diag

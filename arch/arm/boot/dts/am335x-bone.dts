@@ -18,23 +18,30 @@
 &am33xx_pinmux {
 	mcasp0_pins: mcasp0_pins {
 		pinctrl-single,pins = <
-		AM33XX_IOPAD(0x990, 0x08)
-		AM33XX_IOPAD(0x994, 0x08) 
-		AM33XX_IOPAD(0x998, 0x08)
-		AM33XX_IOPAD(0x99c, 0x28)
-		AM33XX_IOPAD(0x9a0, 0x08)
-		AM33XX_IOPAD(0x9a4, 0x08)
-		AM33XX_IOPAD(0x9a8, 0x28)
-		AM33XX_IOPAD(0x9ac, 0x28)
+			AM33XX_IOPAD(0x990, PIN_OUTPUT | MUX_MODE0)
+			AM33XX_IOPAD(0x994, PIN_OUTPUT | MUX_MODE0) 
+			AM33XX_IOPAD(0x998, PIN_OUTPUT | MUX_MODE0)
+			AM33XX_IOPAD(0x99c, PIN_INPUT | MUX_MODE0)
+			AM33XX_IOPAD(0x9a0, PIN_OUTPUT | MUX_MODE0)
+			AM33XX_IOPAD(0x9a4, PIN_OUTPUT | MUX_MODE0)
+			AM33XX_IOPAD(0x9a8, PIN_INPUT | MUX_MODE0) 
+			AM33XX_IOPAD(0x9ac, PIN_INPUT | MUX_MODE0)
+			>;
+		};
+	
+	uart1_pins: uart1_pins {
+		pinctrl-single,pins = <AM33XX_IOPAD(0x980, 0x30)>;
+	};
+	
+	i2c0_pins {
+		pinctrl-single,pins = <
+			AM33XX_IOPAD(0x988, 0x70)
+                        AM33XX_IOPAD(0x98c, 0x70)
 		>;
 	};
 	
-	uart1_pins: uart1_pins {
-		pinctrl-single,pins = <0x180 0x30>;
-	};
-	
 	rstctl_pins: rstctl_pins {
-		pinctrl-single,pins = <0x50 0x17>;
+		pinctrl-single,pins = <AM33XX_IOPAD(0x854, 0x17)>;
 	};
 };
 
@@ -45,6 +52,9 @@
 &uart1 {
 	pinctrl-names = "default";
 	pinctrl-0 = <&uart1_pins>;
+	interrupts = <0x49>;
+	reg = <0x0 0x2000>;
+	clock-frequency = <0x2dc6c00>;
 	status = "okay";
 };
 
@@ -54,7 +64,10 @@
 	pinctrl-0 = <&mcasp0_pins>;
 	rx-num-evt = <1>;
 	tx-num-evt = <1>;
-	serial-dir = <1 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0>;
+	serial-dir = <1 2 0 0
+		      0 0 0 0
+		      0 0 0 0
+		      0 0 0 0>;
 	num-serializer = <16>;
 	tdm-slots = <2>;
 	op-mode = <0>;
@@ -63,46 +76,29 @@
 
 &i2c0 {
 	status = "okay";
-	AVDD-supply = <&ldo3_reg>;
-    	IOVDD-supply = <&ldo3_reg>;
-    	DRVDD-supply = <&ldo3_reg>;
-    	DVDD-supply = <&dcdc1_reg>;
+	pinctrl-names = "default";
+        pinctrl-0 = <&i2c0_pins>;
+	#address-cells = <1>;
+	#size-cells = <0>;	
+
 	wm8776: wm8776@1b {
-		#sound-dai-cells = <0>;
+		#sound-dai-cells = <1>;
 		reg = <0x1b>;
 		compatible = "wlf,wm8776";
-		AVDD-supply = <&ldo3_reg>;
-    		IOVDD-supply = <&ldo3_reg>;
-    		DRVDD-supply = <&ldo3_reg>;
-    		DVDD-supply = <&dcdc1_reg>;
-		};
+	};
 		
 	pca_0: pca9554@23 {
 		reg = <0x23>;
 		compatible = "nxp,pca9554";
-		AVDD-supply = <&ldo3_reg>;
-    		IOVDD-supply = <&ldo3_reg>;
-    		DRVDD-supply = <&ldo3_reg>;
-    		DVDD-supply = <&dcdc1_reg>;
-		linux,gpio-base = <232>;
-		};
+	};
 
 	pca_1: pca9554@22 {
 		reg = <0x22>;
-		AVDD-supply = <&ldo3_reg>;
-    		IOVDD-supply = <&ldo3_reg>;
-    		DRVDD-supply = <&ldo3_reg>;
-    		DVDD-supply = <&dcdc1_reg>;
 		compatible = "nxp,pca9554";
-		vmmc-supply = <&vmmcsd_fixed>;
-		linux,gpio-base = <240>;
-		};
-
+	};
 	pca_2: pca9554@20 {
 		reg = <0x20>;
 		compatible = "nxp,pca9554";
-		vmmc-supply = <&vmmcsd_fixed>;
-		linux,gpio-base = <248>;
 	};
 };
 
@@ -209,19 +205,46 @@
 };
 
 / {
-	sound {
- 		compatible = "simple-audio-card";
-		simple-audio-card,name = "Simple Audio AM335x Roomplayer";
-		simple-audio-card,bitclock-master = <&cpu_master>;
-		simple-audio-card,frame-master = <&cpu_master>;
-		simple-audio-card,format = "i2s";
-		
-		cpu_master: simple-audio-card,cpu {
-		    sound-dai = <&mcasp0>;
-		    system-clock-frequency = <11289600>;
+ 		sound {
+ 			compatible = "simple-audio-card";
+			#address-cells = <1>;
+			#size-cells = <0>;
+
+			//simple-audio-card,routing = "cpu0 Capture", "Capture";
+
+			simple-audio-card,name = "audio card";			
+			
+			simple-audio-card,dai-link@0 {
+				reg = <0>;
+                                format = "i2s";
+				bitclock-master = <&cpu1>;
+				frame-master = <&cpu1>;
+			
+				cpu1: cpu {
+                                        sound-dai = <&mcasp0>;
+                                        system-clock-frequency = <11289600 24576000>;	
+					//system-clock-direction-out;
+				};
+
+                                codec {
+                                        sound-dai = <&wm8776 0>;
+				};
+                        };
+			simple-audio-card,dai-link@1 {
+                                reg = <1>;
+				format = "i2s";
+                                bitclock-master = <&cpu0>;
+                                frame-master = <&cpu0>;
+ 
+				cpu0: cpu {
+                                        sound-dai = <&mcasp0>;
+					system-clock-frequency = <11289600 24576000>;
+					//system-clock-direction-out;
+				};
+
+				codec {
+					sound-dai = <&wm8776 1>;
+				};
+                        };
 		};
-		sound_master: simple-audio-card,codec {
-		    sound-dai = <&wm8776>;
-		};
-	};
 };

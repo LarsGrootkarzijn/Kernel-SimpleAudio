@@ -17,7 +17,7 @@
 #include <sound/core.h>
 #include <sound/pcm.h>
 #include <sound/soc.h>
-
+#include <string.h>
 #include <asm/dma.h>
 #include <asm/mach-types.h>
 
@@ -351,6 +351,20 @@ static struct snd_soc_card da850_snd_soc_card = {
  * The struct is used as place holder. It will be completely
  * filled with data from dt node.
  */
+
+static const struct of_device_id wm8776_dt_ids[] = {
+    { .compatible = "ti,wm8776", },
+    { }
+};
+MODULE_DEVICE_TABLE(of, wm8776_dt_ids);
+
+static struct platform_driver wm8776_codec_driver = {
+    .driver = {
+        .name = "wm8776",
+        .owner = THIS_MODULE,
+        .of_match_table = of_match_ptr(wm8776_dt_ids),
+    },
+
 SND_SOC_DAILINK_DEFS(evm,
 	DAILINK_COMP_ARRAY(COMP_EMPTY()),
 	DAILINK_COMP_ARRAY(COMP_CODEC(NULL, "tlv320aic3x-hifi")),

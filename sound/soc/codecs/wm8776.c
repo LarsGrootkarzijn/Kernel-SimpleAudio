@@ -7,7 +7,6 @@
  * Author: Mark Brown <broonie@opensource.wolfsonmicro.com>
  *
  * TODO: Input ALC/limiter support
- *
  */
 
 #include <linux/module.h>
@@ -124,10 +123,10 @@ SND_SOC_DAPM_INPUT("AIN3"),
 SND_SOC_DAPM_INPUT("AIN4"),
 SND_SOC_DAPM_INPUT("AIN5"),
 
-SND_SOC_DAPM_MIXER("Input Mixer", WM8776_PWRDOWN, 6, 1,
+SND_SOC_DAPM_MIXER("Input Mixer", WM8776_PWRDOWN, 6, 0,
 		   inmix_controls, ARRAY_SIZE(inmix_controls)),
 
-SND_SOC_DAPM_ADC("ADC", "Capture", WM8776_PWRDOWN, 1, 1),
+SND_SOC_DAPM_ADC("ADC", "Capture", WM8776_PWRDOWN, 1, 0),
 SND_SOC_DAPM_DAC("DAC", "Playback", WM8776_PWRDOWN, 2, 1),
 
 SND_SOC_DAPM_MIXER("Output Mixer", SND_SOC_NOPM, 0, 0,
@@ -246,7 +245,7 @@ static int wm8776_hw_params(struct snd_pcm_substream *substream,
 	int iface_reg, iface;
 	int ratio_shift, master;
 	int i;
-	
+
 	switch (dai->driver->id) {
 	case WM8776_DAI_DAC:
 		iface_reg = WM8776_DACIFCTRL;
@@ -437,7 +436,6 @@ static const struct snd_soc_component_driver soc_component_dev_wm8776 = {
 	.idle_bias_on		= 1,
 	.use_pmdown_time	= 1,
 	.endianness		= 1,
-	.non_legacy_dai_naming	= 1,
 };
 
 static const struct of_device_id wm8776_of_match[] = {
@@ -491,8 +489,7 @@ static struct spi_driver wm8776_spi_driver = {
 #endif /* CONFIG_SPI_MASTER */
 
 #if IS_ENABLED(CONFIG_I2C)
-static int wm8776_i2c_probe(struct i2c_client *i2c,
-			    const struct i2c_device_id *id)
+static int wm8776_i2c_probe(struct i2c_client *i2c)
 {
 	struct wm8776_priv *wm8776;
 	int ret;
@@ -526,7 +523,7 @@ static struct i2c_driver wm8776_i2c_driver = {
 		.name = "wm8776",
 		.of_match_table = wm8776_of_match,
 	},
-	.probe =    wm8776_i2c_probe,
+	.probe_new = wm8776_i2c_probe,
 	.id_table = wm8776_i2c_id,
 };
 #endif

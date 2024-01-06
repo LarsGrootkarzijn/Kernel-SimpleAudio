@@ -22,7 +22,6 @@ alias symbol:gserial_disconnect u_serial
 alias symbol:ata_sas_port_init libata
 alias symbol:usb_of_get_interface_node usbcore
 alias symbol:cdc_ncm_fill_tx_frame cdc_ncm
-alias symbol:hci_conn_check_secure bluetooth
 alias symbol:usb_hcd_is_primary_hcd usbcore
 alias symbol:usb_unlink_urb usbcore
 alias symbol:nf_conntrack_hash nf_conntrack
@@ -91,11 +90,9 @@ alias symbol:ata_xfer_mode2mask libata
 alias symbol:musb_get_mode musb_hdrc
 alias symbol:phylink_speed_up phylink
 alias symbol:alloc_c_can_dev c_can
-alias symbol:l2cap_unregister_user bluetooth
 alias symbol:crypto_ecdh_decode_key ecdh_generic
 alias symbol:xhci_suspend xhci_hcd
 alias symbol:__fscache_attr_changed fscache
-alias symbol:hci_recv_frame bluetooth
 alias symbol:usbnet_pause_rx usbnet
 alias symbol:__fscache_maybe_release_page fscache
 alias symbol:adxl34x_remove adxl34x
@@ -105,7 +102,6 @@ alias symbol:input_allocate_polled_device input_polldev
 alias symbol:usb_sg_cancel usbcore
 alias symbol:ata_scsi_ioctl libata
 alias symbol:w1_touch_bit wire
-alias symbol:l2cap_chan_put bluetooth
 alias symbol:sata_pmp_qc_defer_cmd_switch libata
 alias symbol:rndis_signal_disconnect usb_f_rndis
 alias symbol:sdev_evt_send scsi_mod
@@ -115,7 +111,6 @@ alias symbol:usb_interface_id libcomposite
 alias symbol:ohci_init_driver ohci_hcd
 alias symbol:__fscache_register_netfs fscache
 alias symbol:usbnet_write_cmd usbnet
-alias symbol:bt_procfs_cleanup bluetooth
 alias symbol:tpg_fillbuffer v4l2_tpg
 alias symbol:ehci_setup ehci_hcd
 alias symbol:__scsi_device_lookup scsi_mod
@@ -186,7 +181,6 @@ alias symbol:usb_role_switch_set_drvdata roles
 alias symbol:rpmsg_trysend_offchannel rpmsg_core
 alias symbol:nf_ct_extend_unregister nf_conntrack
 alias symbol:simd_aead_create crypto_simd
-alias symbol:bt_err_ratelimited bluetooth
 alias symbol:scsi_get_host_dev scsi_mod
 alias symbol:ipt_do_table ip_tables
 alias symbol:nf_ct_expect_hash nf_conntrack
@@ -222,7 +216,6 @@ alias symbol:tpg_g_color_order v4l2_tpg
 alias symbol:ffs_single_dev usb_f_fs
 alias symbol:llc_set_station_handler llc
 alias symbol:usbnet_resume usbnet
-alias symbol:l2cap_chan_connect bluetooth
 alias symbol:ahci_start_engine libahci
 alias symbol:cdc_ncm_rx_verify_ndp32 cdc_ncm
 alias symbol:usb_role_switch_get roles
@@ -250,7 +243,6 @@ alias symbol:ata_link_abort libata
 alias symbol:g_audio_setup u_audio
 alias symbol:usb_anchor_resume_wakeups usbcore
 alias symbol:ata_host_resume libata
-alias symbol:bt_debugfs bluetooth
 alias symbol:ehci_resume ehci_hcd
 alias symbol:ata_pci_remove_one libata
 alias symbol:scsi_rescan_device scsi_mod
@@ -262,7 +254,6 @@ alias symbol:scsi_kunmap_atomic_sg scsi_mod
 alias symbol:usb_serial_port_softint usbserial
 alias symbol:usb_role_switch_unregister roles
 alias symbol:ipv6_synproxy_hook nf_synproxy_core
-alias symbol:bt_accept_unlink bluetooth
 alias symbol:gserial_alloc_line u_serial
 alias symbol:sata_port_ops libata
 alias symbol:alloc_can_skb can_dev
@@ -279,7 +270,6 @@ alias symbol:fscache_object_retrying_stale fscache
 alias symbol:crc_itu_t_table crc_itu_t
 alias symbol:usbnet_set_rx_mode usbnet
 alias symbol:xhci_init_driver xhci_hcd
-alias symbol:bt_sock_recvmsg bluetooth
 alias symbol:gspca_expo_autogain gspca_main
 alias symbol:ata_get_cmd_descript libata
 alias symbol:__fscache_uncache_all_inode_pages fscache
@@ -296,7 +286,6 @@ alias symbol:scsi_host_complete_all_commands scsi_mod
 alias symbol:cryptd_ahash_queued cryptd
 alias symbol:usb_scuttle_anchored_urbs usbcore
 alias symbol:usb_serial_resume usbserial
-alias symbol:__hci_cmd_sync_ev bluetooth
 alias symbol:esp6_output_head esp6
 alias symbol:ip6_tnl_get_cap ip6_tunnel
 alias symbol:cryptd_alloc_ahash cryptd
@@ -312,16 +301,13 @@ alias symbol:llc_sap_open llc
 alias symbol:snd_rawmidi_output_params snd_rawmidi
 alias symbol:nf_ct_seq_adjust nf_conntrack
 alias symbol:ahci_platform_resume libahci_platform
-alias symbol:l2cap_conn_put bluetooth
 alias symbol:scsi_autopm_get_device scsi_mod
-alias symbol:bt_sock_ioctl bluetooth
 alias symbol:gether_connect u_ether
 alias symbol:ata_dev_set_feature libata
 alias symbol:esp_output_tail esp4
 alias symbol:simd_register_skciphers_compat crypto_simd
 alias symbol:sata_link_resume libata
 alias symbol:usb_altnum_to_altsetting usbcore
-alias symbol:hci_unregister_cb bluetooth
 alias symbol:usb_add_gadget_udc_release udc_core
 alias symbol:arc4_crypt libarc4
 alias symbol:usb_find_common_endpoints usbcore
@@ -340,7 +326,6 @@ alias symbol:can_proto_unregister can
 alias symbol:can_rx_offload_irq_offload_fifo can_dev
 alias symbol:nf_conntrack_locks nf_conntrack
 alias symbol:crc_ccitt_false crc_ccitt
-alias symbol:bt_sock_reclassify_lock bluetooth
 alias symbol:cryptd_free_ahash cryptd
 alias symbol:usb_hid_driver usbhid
 alias symbol:nf_ct_helper_expectfn_find_by_symbol nf_conntrack
@@ -380,7 +365,6 @@ alias symbol:gether_get_host_addr u_ether
 alias symbol:ata_bmdma_start libata
 alias symbol:of_can_transceiver can_dev
 alias symbol:simd_aead_free crypto_simd
-alias symbol:l2cap_register_user bluetooth
 alias symbol:ohci_restart ohci_hcd
 alias symbol:usb_driver_set_configuration usbcore
 alias symbol:usb_get_current_frame_number usbcore
@@ -388,7 +372,6 @@ alias symbol:usb_gadget_clear_selfpowered udc_core
 alias symbol:scsi_host_block scsi_mod
 alias symbol:devm_led_classdev_flash_register_ext led_class_flash
 alias symbol:ip6_tnl_encap_add_ops ip6_tunnel
-alias symbol:l2cap_is_socket bluetooth
 alias symbol:usb_phy_generic_unregister phy_generic
 alias symbol:snd_rawmidi_transmit_peek snd_rawmidi
 alias symbol:ipcomp_destroy xfrm_ipcomp
@@ -405,7 +388,6 @@ alias symbol:usb_serial_generic_read_bulk_callback usbserial
 alias symbol:scsi_remove_host scsi_mod
 alias symbol:usb_string_ids_n libcomposite
 alias symbol:input_register_polled_device input_polldev
-alias symbol:bt_warn_ratelimited bluetooth
 alias symbol:cdc_ncm_change_mtu cdc_ncm
 alias symbol:__fscache_enable_cookie fscache
 alias symbol:usb_stor_bulk_transfer_buf usb_storage
@@ -433,7 +415,6 @@ alias symbol:scsi_target_block scsi_mod
 alias symbol:usb_gadget_unmap_request udc_core
 alias symbol:phylink_of_phy_connect phylink
 alias symbol:gether_disconnect u_ether
-alias symbol:bt_sock_link bluetooth
 alias symbol:scsi_command_normalize_sense scsi_mod
 alias symbol:ata_pci_bmdma_init_one libata
 alias symbol:usb_serial_generic_resume usbserial
@@ -447,7 +428,6 @@ alias symbol:usb_control_msg_send usbcore
 alias symbol:usb_hcds_loaded usbcore
 alias symbol:usb_serial_generic_tiocmiwait usbserial
 alias symbol:vli_is_zero ecc
-alias symbol:hci_set_fw_info bluetooth
 alias symbol:ata_pci_shutdown_one libata
 alias symbol:gserial_alloc_line_no_console u_serial
 alias symbol:rndis_rm_hdr usb_f_rndis
@@ -475,7 +455,6 @@ alias symbol:usbnet_tx_timeout usbnet
 alias symbol:w1_unregister_family wire
 alias symbol:usb_function_register libcomposite
 alias symbol:usb_hc_died usbcore
-alias symbol:l2cap_add_psm bluetooth
 alias symbol:usb_kill_urb usbcore
 alias symbol:dsa_port_from_netdev dsa_core
 alias symbol:esp_input_done2 esp4
@@ -516,7 +495,6 @@ alias symbol:nf_ct_remove_expectations nf_conntrack
 alias symbol:cdrom_get_media_event cdrom
 alias symbol:usb_stor_ctrl_transfer usb_storage
 alias symbol:ata_msleep libata
-alias symbol:l2cap_chan_send bluetooth
 alias symbol:ata_sff_qc_issue libata
 alias symbol:fscache_enqueue_operation fscache
 alias symbol:fsg_show_inquiry_string usb_f_mass_storage
@@ -556,7 +534,6 @@ alias symbol:ata_scsi_slave_config libata
 alias symbol:usb_function_deactivate libcomposite
 alias symbol:scsi_test_unit_ready scsi_mod
 alias symbol:nf_ct_expect_alloc nf_conntrack
-alias symbol:hci_alloc_dev bluetooth
 alias symbol:phylink_disconnect_phy phylink
 alias symbol:ata_host_activate libata
 alias symbol:fsg_store_removable usb_f_mass_storage
@@ -583,7 +560,6 @@ alias symbol:usb_stor_reset_resume usb_storage
 alias symbol:__fscache_relinquish_cookie fscache
 alias symbol:fsg_common_create_lun usb_f_mass_storage
 alias symbol:rpmsg_remotedev_get_named_device rpmsg_kdrv
-alias symbol:l2cap_chan_set_defaults bluetooth
 alias symbol:ata_std_qc_defer libata
 alias symbol:nf_conntrack_tuple_taken nf_conntrack
 alias symbol:xfrm_ealg_get_byname xfrm_algo
@@ -592,7 +568,6 @@ alias symbol:xfrm_ealg_get_byid xfrm_algo
 alias symbol:can_change_state can_dev
 alias symbol:__fscache_check_consistency fscache
 alias symbol:ata_sas_sync_probe libata
-alias symbol:baswap bluetooth
 alias symbol:usb_put_hcd usbcore
 alias symbol:gether_get_dev_addr u_ether
 alias symbol:usb_gadget_wakeup udc_core
@@ -621,7 +596,6 @@ alias symbol:usb_serial_generic_close usbserial
 alias symbol:ffs_name_dev usb_f_fs
 alias symbol:scmd_printk scsi_mod
 alias symbol:scsi_report_device_reset scsi_mod
-alias symbol:hci_conn_switch_role bluetooth
 alias symbol:musb_queue_resume_work musb_hdrc
 alias symbol:phylink_ethtool_nway_reset phylink
 alias symbol:rndis_add_hdr usb_f_rndis
@@ -631,7 +605,6 @@ alias symbol:ata_bmdma32_port_ops libata
 alias symbol:config_ep_by_speed libcomposite
 alias symbol:usb_sg_wait usbcore
 alias symbol:ahci_host_activate libahci
-alias symbol:hci_resume_dev bluetooth
 alias symbol:ti_emif_copy_pm_function_table ti_emif_sram
 alias symbol:nf_ct_ext_add nf_conntrack
 alias symbol:g_audio_cleanup u_audio
@@ -666,7 +639,6 @@ alias symbol:ehci_reset ehci_hcd
 alias symbol:esp_output_head esp4
 alias symbol:musb_readb musb_hdrc
 alias symbol:can_rx_offload_add_fifo can_dev
-alias symbol:bt_sock_stream_recvmsg bluetooth
 alias symbol:w1_register_family wire
 alias symbol:ahci_save_initial_config libahci
 alias symbol:dsa_port_get_ethtool_phy_stats dsa_core
@@ -701,7 +673,6 @@ alias symbol:usbnet_probe usbnet
 alias symbol:__snd_rawmidi_transmit_ack snd_rawmidi
 alias symbol:xfrm_calg_get_byid xfrm_algo
 alias symbol:ecc_is_pubkey_valid_partial ecc
-alias symbol:hci_set_hw_info bluetooth
 alias symbol:usb_gadget_udc_reset udc_core
 alias symbol:nf_ct_delete nf_conntrack
 alias symbol:cdc_ncm_unbind cdc_ncm
@@ -718,7 +689,6 @@ alias symbol:snd_usbmidi_resume snd_usbmidi_lib
 alias symbol:gether_get_ifname u_ether
 alias symbol:ata_scsi_slave_destroy libata
 alias symbol:ahci_platform_disable_resources libahci_platform
-alias symbol:l2cap_chan_create bluetooth
 alias symbol:nf_conntrack_helper_try_module_get nf_conntrack
 alias symbol:scsi_device_lookup scsi_mod
 alias symbol:usb_get_intf usbcore
@@ -794,7 +764,6 @@ alias symbol:ahci_platform_suspend libahci_platform
 alias symbol:ata_bmdma_irq_clear libata
 alias symbol:ata_sas_port_destroy libata
 alias symbol:usb_put_dev usbcore
-alias symbol:hci_mgmt_chan_unregister bluetooth
 alias symbol:led_get_flash_fault led_class_flash
 alias symbol:phylink_mii_c22_pcs_config phylink
 alias symbol:usb_serial_generic_throttle usbserial
@@ -868,7 +837,6 @@ alias symbol:musb_set_host musb_hdrc
 alias symbol:ahci_check_ready libahci
 alias symbol:dsa_devlink_port_region_create dsa_core
 alias symbol:usb_disable_ltm usbcore
-alias symbol:bt_to_errno bluetooth
 alias symbol:usb_get_from_anchor usbcore
 alias symbol:ata_pci_sff_activate_host libata
 alias symbol:fsg_ss_bulk_out_desc usb_f_mass_storage
@@ -895,13 +863,10 @@ alias symbol:ip6_tnl_rcv ip6_tunnel
 alias symbol:ata_pio_need_iordy libata
 alias symbol:rpmsg_poll rpmsg_core
 alias symbol:ata_std_postreset libata
-alias symbol:l2cap_chan_close bluetooth
 alias symbol:scsi_block_requests scsi_mod
 alias symbol:tpg_alloc v4l2_tpg
 alias symbol:usbnet_manage_power usbnet
-alias symbol:bt_accept_dequeue bluetooth
 alias symbol:cryptd_free_aead cryptd
-alias symbol:hci_free_dev bluetooth
 alias symbol:usb_calc_bus_time usbcore
 alias symbol:fscache_op_complete fscache
 alias symbol:usb_gstrings_attach libcomposite
@@ -914,7 +879,6 @@ alias symbol:usb_put_intf usbcore
 alias symbol:tpg_fill_plane_buffer v4l2_tpg
 alias symbol:nf_nat_ipv6_unregister_fn nf_nat
 alias symbol:__fscache_read_or_alloc_pages fscache
-alias symbol:bt_accept_enqueue bluetooth
 alias symbol:cryptd_alloc_aead cryptd
 alias symbol:usb_gadget_unregister_driver udc_core
 alias symbol:scsi_change_queue_depth scsi_mod
@@ -945,7 +909,6 @@ alias symbol:ipt_register_table ip_tables
 alias symbol:sata_deb_timing_normal libata
 alias symbol:ehci_hub_control ehci_hcd
 alias symbol:usb_deregister_dev usbcore
-alias symbol:bt_err bluetooth
 alias symbol:ata_do_set_mode libata
 alias symbol:alloc_ep_req libcomposite
 alias symbol:nf_ct_expect_put nf_conntrack
@@ -958,7 +921,6 @@ alias symbol:sata_link_hardreset libata
 alias symbol:ahci_platform_suspend_host libahci_platform
 alias symbol:ata_port_schedule_eh libata
 alias symbol:fscache_add_cache fscache
-alias symbol:bt_procfs_init bluetooth
 alias symbol:scsi_host_put scsi_mod
 alias symbol:usb_create_hcd usbcore
 alias symbol:ata_bmdma_setup libata
@@ -967,7 +929,6 @@ alias symbol:usb_gadget_config_buf libcomposite
 alias symbol:sata_scr_valid libata
 alias symbol:usb_gadget_giveback_request udc_core
 alias symbol:usb_role_switch_find_by_fwnode roles
-alias symbol:bt_sock_register bluetooth
 alias symbol:usbnet_get_stats64 usbnet
 alias symbol:cdc_ncm_rx_verify_nth32 cdc_ncm
 alias symbol:ahci_do_softreset libahci
@@ -996,7 +957,6 @@ alias symbol:fscache_withdraw_cache fscache
 alias symbol:usb_ep_queue udc_core
 alias symbol:tpg_s_crop_compose v4l2_tpg
 alias symbol:snd_rawmidi_drain_output snd_rawmidi
-alias symbol:hci_get_route bluetooth
 alias symbol:usb_stor_set_xfer_buf usb_storage
 alias symbol:scsi_add_host_with_dma scsi_mod
 alias symbol:spi_bitbang_init spi_bitbang
@@ -1012,7 +972,6 @@ alias symbol:scsi_eh_finish_cmd scsi_mod
 alias symbol:scsi_sanitize_inquiry_string scsi_mod
 alias symbol:sata_deb_timing_long libata
 alias symbol:simd_unregister_skciphers crypto_simd
-alias symbol:l2cap_chan_list bluetooth
 alias symbol:phylink_set_pcs phylink
 alias symbol:phylink_stop phylink
 alias symbol:dsa_devlink_param_get dsa_core
@@ -1052,7 +1011,6 @@ alias symbol:usb_gadget_unmap_request_by_dev udc_core
 alias symbol:gether_set_gadget u_ether
 alias symbol:register_dsa_notifier dsa_core
 alias symbol:adxl34x_suspend adxl34x
-alias symbol:l2cap_conn_get bluetooth
 alias symbol:nf_nat_ipv4_unregister_fn nf_nat
 alias symbol:nf_confirm nf_conntrack
 alias symbol:nf_ct_alloc_hashtable nf_conntrack
@@ -1062,7 +1020,6 @@ alias symbol:rpmsg_get_mtu rpmsg_core
 alias symbol:usb_hcd_giveback_urb usbcore
 alias symbol:usb_role_switch_set_role roles
 alias symbol:usb_stor_bulk_srb usb_storage
-alias symbol:bt_warn bluetooth
 alias symbol:scsi_set_medium_removal scsi_mod
 alias symbol:ata_bmdma_dumb_qc_prep libata
 alias symbol:rpmsg_send rpmsg_core
@@ -1094,7 +1051,6 @@ alias symbol:ahci_set_em_messages libahci
 alias symbol:__fscache_alloc_page fscache
 alias symbol:musb_mailbox musb_hdrc
 alias symbol:usbnet_defer_kevent usbnet
-alias symbol:hci_register_dev bluetooth
 alias symbol:ip6_tnl_get_link_net ip6_tunnel
 alias symbol:scsi_device_put scsi_mod
 alias symbol:llc_remove_pack llc
@@ -1173,9 +1129,7 @@ alias symbol:usbnet_get_link usbnet
 alias symbol:ata_sff_tf_load libata
 alias symbol:fscache_mark_page_cached fscache
 alias symbol:xfrm_probe_algs xfrm_algo
-alias symbol:__hci_cmd_sync bluetooth
 alias symbol:cdc_ncm_bind_common cdc_ncm
-alias symbol:hci_unregister_dev bluetooth
 alias symbol:ahci_platform_resume_host libahci_platform
 alias symbol:ata_sff_check_status libata
 alias symbol:usb_reset_device usbcore
@@ -1197,12 +1151,10 @@ alias symbol:usb_hcd_pci_pm_ops usbcore
 alias symbol:rpmsg_unregister_device rpmsg_core
 alias symbol:nf_br_ops bridge
 alias symbol:unregister_candev can_dev
-alias symbol:bt_sock_wait_ready bluetooth
 alias symbol:fsg_store_file usb_f_mass_storage
 alias symbol:ahci_platform_enable_resources libahci_platform
 alias symbol:usb_ep_set_maxpacket_limit udc_core
 alias symbol:ipt_unregister_table_exit ip_tables
-alias symbol:hci_cmd_sync bluetooth
 alias symbol:safe_candev_priv can_dev
 alias symbol:ffs_lock usb_f_fs
 alias symbol:__fscache_invalidate fscache
@@ -1221,7 +1173,6 @@ alias symbol:crc32c_impl libcrc32c
 alias symbol:usb_unpoison_urb usbcore
 alias symbol:nf_nat_alloc_null_binding nf_nat
 alias symbol:can_get_echo_skb can_dev
-alias symbol:bt_sock_poll bluetooth
 alias symbol:cdrom_read_tocentry cdrom
 alias symbol:ata_port_pbar_desc libata
 alias symbol:can_rx_offload_irq_offload_timestamp can_dev
@@ -1235,13 +1186,11 @@ alias symbol:open_candev can_dev
 alias symbol:ebt_register_table ebtables
 alias symbol:usb_phy_roothub_alloc usbcore
 alias symbol:usb_phy_roothub_set_mode usbcore
-alias symbol:__hci_cmd_send bluetooth
 alias symbol:usb_init_urb usbcore
 alias symbol:crypto_ecdh_shared_secret ecc
 alias symbol:snd_usbmidi_input_start snd_usbmidi_lib
 alias symbol:register_snap_client psnap
 alias symbol:matrix_keypad_build_keymap matrix_keymap
-alias symbol:bt_sock_wait_state bluetooth
 alias symbol:unregister_c_can_dev c_can
 alias symbol:w1_reset_bus wire
 alias symbol:ehci_adjust_port_wakeup_flags ehci_hcd
@@ -1269,12 +1218,10 @@ alias symbol:usbnet_purge_paused_rxq usbnet
 alias symbol:sata_std_hardreset libata
 alias symbol:ata_sff_interrupt libata
 alias symbol:usb_composite_overwrite_options libcomposite
-alias symbol:bt_sock_unlink bluetooth
 alias symbol:uio_unregister_device uio
 alias symbol:usb_stor_adjust_quirks usb_storage
 alias symbol:__scsi_iterate_devices scsi_mod
 alias symbol:snd_rawmidi_input_params snd_rawmidi
-alias symbol:hci_mgmt_chan_register bluetooth
 alias symbol:scsi_block_when_processing_errors scsi_mod
 alias symbol:rpmsg_kdrv_send_request_with_callback rpmsg_kdrv
 alias symbol:__snd_usbmidi_create snd_usbmidi_lib
@@ -1326,7 +1273,6 @@ alias symbol:tpg_init v4l2_tpg
 alias symbol:usb_add_gadget udc_core
 alias symbol:ata_sas_port_start libata
 alias symbol:cdrom_ioctl cdrom
-alias symbol:l2cap_chan_del bluetooth
 alias symbol:nf_nat_helper_unregister nf_conntrack
 alias symbol:usbnet_ether_cdc_bind cdc_ether
 alias symbol:gether_get_qmult u_ether
@@ -1349,7 +1295,6 @@ alias symbol:usb_ep_enable udc_core
 alias symbol:usbnet_nway_reset usbnet
 alias symbol:scsi_remove_target scsi_mod
 alias symbol:cryptd_free_skcipher cryptd
-alias symbol:bt_sock_unregister bluetooth
 alias symbol:gether_set_host_addr u_ether
 alias symbol:ip6_tnl_encap_setup ip6_tunnel
 alias symbol:__nf_ct_try_assign_helper nf_conntrack
@@ -1368,12 +1313,9 @@ alias symbol:dsa_switch_suspend dsa_core
 alias symbol:xhci_resume xhci_hcd
 alias symbol:simd_register_aeads_compat crypto_simd
 alias symbol:ipt_unregister_table_pre_exit ip_tables
-alias symbol:bt_info bluetooth
-alias symbol:hci_recv_diag bluetooth
 alias symbol:usbnet_cdc_unbind cdc_ether
 alias symbol:rndis_set_param_vendor usb_f_rndis
 alias symbol:scsi_track_queue_full scsi_mod
-alias symbol:hci_register_cb bluetooth
 alias symbol:usb_serial_generic_write_bulk_callback usbserial
 alias symbol:usbnet_start_xmit usbnet
 alias symbol:ata_cable_sata libata
@@ -1387,11 +1329,9 @@ alias symbol:register_8022_client p8022
 alias symbol:c_can_power_up c_can
 alias symbol:nf_ct_l4proto_log_invalid nf_conntrack
 alias symbol:nf_ct_expect_iterate_destroy nf_conntrack
-alias symbol:hci_suspend_dev bluetooth
 alias symbol:usb_stor_post_reset usb_storage
 alias symbol:ata_host_suspend libata
 alias symbol:nf_ct_bridge_unregister nf_conntrack
-alias symbol:hci_conn_security bluetooth
 alias symbol:usb_ep_autoconfig_reset libcomposite
 alias symbol:synproxy_recv_client_ack_ipv6 nf_synproxy_core
 alias symbol:phylink_decode_usxgmii_word phylink
@@ -1420,6 +1360,5 @@ alias symbol:arpt_register_table arp_tables
 alias symbol:u_audio_stop_playback u_audio
 alias symbol:usb_stor_suspend usb_storage
 alias symbol:dsa_switch_resume dsa_core
-alias symbol:hci_reset_dev bluetooth
 alias symbol:dev_attr_sw_activity libata
 alias symbol:unregister_snap_client psnap
